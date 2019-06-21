@@ -1,0 +1,18 @@
+{% extends 'goologin/base.html' %}
+
+{% block content %}
+
+<h2>고등학교 학력</h2>
+{{ tb_edu_highs | length }}
+{% for tb_edu_high in tb_edu_highs %}
+  <p>{{ tb_edu_high.name }}</p>
+  <p>{{ tb_edu_high.loc }}</p>
+  <p>{{ tb_edu_high.start | date:'Y-m-d' }}</p>
+  <p>{{ tb_edu_high.end }}</p>
+  <p>{{ tb_edu_high.categorys }}</p>
+{% endfor %}
+<br>
+<a href="{% url 'goologin:create'%}">작성</a>
+<a href="{% url 'goologin:update'%}">수정</a>
+  
+{% endblock  %}

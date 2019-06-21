@@ -1,0 +1,22 @@
+{% extends 'goologin/base.html' %}
+
+{% block content %}
+
+  <form action="{% url 'goologin:update' %}" method="POST">
+    {% csrf_token %}
+    <label for="name">학교명: </label>
+    <input type="text" name="name" id="name" > <br>
+    <label for="loc">소재지: </label>
+    <input type="text" name="loc" id="loc"> <br>
+    <label for="type">계열: </label>
+    <input type="text" name="type" id="type"> <br>
+    <label for="start">입학: </label>
+    <input type="text"  name="start" id="start"> <br>
+    <label for="end">졸업: </label>
+    <input type="text"  name="end" id="end"> <br>
+
+    <input type="submit" value="제출">
+  </form>
+  <a href="{% url 'goologin:index'%}">back</a>
+
+{% endblock  %}
